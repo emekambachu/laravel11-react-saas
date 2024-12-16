@@ -6,7 +6,13 @@ import { useForm } from '@inertiajs/react';
 import Feature from "@/Components/Feature.jsx";
 
 export default function index({feature, answer}){
-    const {data, setData, post, reset, errors, processing} = useForm({
+    const {
+        data,
+        setData,
+        post,
+        reset,
+        errors, processing
+    } = useForm({
         number1: '',
         number2: ''
     });
@@ -30,7 +36,15 @@ export default function index({feature, answer}){
                         type="text"
                         value={data.number1}
                         className="mt-1 block w-full"
+                        onChange={(e) => setData('number1', e.target.value)}
                     />
+                    <InputError message={errors.number1} className="mt-2" />
+                </div>
+
+                <div className="flex items-center justify-end mt-4 col-span-2">
+                    <PrimaryButton className="ms-4" disabled={processing}>
+                        Calculate
+                    </PrimaryButton>
                 </div>
             </form>
         </Feature>
