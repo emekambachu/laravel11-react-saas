@@ -1,5 +1,6 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout.jsx";
 import {Head, Link, usePage} from "@inertiajs/react";
+import LockIcon from "@/Components/icons/LockIcon.jsx";
 
 export default function Feature({feature, answer, children}){
     const {auth} = usePage().props;
@@ -31,19 +32,17 @@ export default function Feature({feature, answer, children}){
 
                                 <div
                                     className="absolute left-0 top-0 right-0 bottom-0 z-20 flex flex-col items-center justify-center bg-white/70 gap-3">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                         stroke-width="1.5" stroke="currentColor" className="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round"
-                                              d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"/>
-                                    </svg>
+
+                                    <LockIcon width="30" className="text-gray-400"/>
+
                                     <div>
                                         You don't have enough credits to unlock this feature. Go{" "}
-                                        <link
+                                        <Link
                                             href="/"
                                             className="underline"
                                         >
                                             Buy More Credits
-                                        </link>
+                                        </Link>
                                     </div>
 
                                 </div>

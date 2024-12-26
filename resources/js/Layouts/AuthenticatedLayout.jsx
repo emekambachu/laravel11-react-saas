@@ -46,10 +46,17 @@ export default function AuthenticatedLayout({ header, children }) {
                             </div>
                         </div>
 
-                        <div className="hidden sm:ms-6 sm:flex sm:items-center">
-                            <span className="text-white flex gap-3">
-                                <CoinIcon width="35" height="35"/>
+                        <div className="hidden sm:ms-6 sm:flex sm:items-center gap-3">
+                            <span className="text-white flex gap-3 mr-2">
+                                <CoinIcon width="30" height="30"/>
+                                {user.available_credits} Credits
                             </span>
+                            <Link
+                                href="/"
+                                className="text-white py-1 px-3 rounded border transition-colors hover:text-gray-800 hover:bg-white"
+                            >
+                                Get More
+                            </Link>
                             <div className="relative ms-3">
                                 <Dropdown>
                                     <Dropdown.Trigger>
