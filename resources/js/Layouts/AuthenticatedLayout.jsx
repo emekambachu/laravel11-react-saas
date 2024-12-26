@@ -4,6 +4,7 @@ import NavLink from '@/Components/NavLink';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Link, usePage } from '@inertiajs/react';
 import { useState } from 'react';
+import CoinIcon from "@/Components/icons/CoinIcon.jsx";
 
 export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
@@ -46,6 +47,9 @@ export default function AuthenticatedLayout({ header, children }) {
                         </div>
 
                         <div className="hidden sm:ms-6 sm:flex sm:items-center">
+                            <span className="text-white flex gap-3">
+                                <CoinIcon width="35" height="35"/>
+                            </span>
                             <div className="relative ms-3">
                                 <Dropdown>
                                     <Dropdown.Trigger>
@@ -145,6 +149,18 @@ export default function AuthenticatedLayout({ header, children }) {
                             active={route().current('dashboard')}
                         >
                             Dashboard
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('feature1.index')}
+                            active={route().current('feature1.index')}
+                        >
+                            Feature 1
+                        </ResponsiveNavLink>
+                        <ResponsiveNavLink
+                            href={route('feature2.index')}
+                            active={route().current('feature2.index')}
+                        >
+                            Feature 2
                         </ResponsiveNavLink>
                     </div>
 

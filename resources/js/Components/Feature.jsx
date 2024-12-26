@@ -56,6 +56,8 @@ export default function Feature({feature, answer, children}){
                             </p>
                         </div>
 
+                        {children}
+
                     </div>
                 </div>
             </div>
