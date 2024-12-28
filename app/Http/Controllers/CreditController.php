@@ -82,5 +82,22 @@ class CreditController extends Controller
             http_response_code(400);
             exit();
         }
+
+        switch ($event->type) {
+            case 'checkout.session.completed':
+                $session = $event->data->object;
+                $transaction = Transaction::where('session_id', $session->id)->first();
+                if($transaction && $transaction->status === 'pending'){
+                    $transaction->status = 'paid';
+                    $transaction->save();
+
+                    $transaction->user->available_credits += $transaction->credits;
+                    $transaction->user->save();
+                }
+
+            default:
+                echo 'Received unknown event type ' . $event->type;
+        }
+        return response('');
     }
 }
