@@ -76,7 +76,7 @@ export default function CreditPricingCards({packages, features}){
                                     <input type="hidden" name="package_id" value={p.id}/>
                                     <button
                                         type="submit"
-                                        className="bg-blue-600 hover:bg-blue-700 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2,5 text-center text-white focus:ring-blue-900 w-full"
+                                        className="bg-blue-600 hover:bg-blue-700 focus:ring-4 font-medium rounded-lg text-sm px-5 py-2 text-center text-white focus:ring-blue-900 w-full"
                                     >
                                         Get Started
                                     </button>
